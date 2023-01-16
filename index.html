@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src=" https://smtpjs.com/v3/smtp.js"></script>
+    <title>Signup</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand text-success" style="padding-left: 10px;">Techscription Signup</a>
+          <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+          </div>
+        </div>
+      </nav>
+        <div class="container-fluid " id="form">
+            <div class="mb-3 p-2">
+                <label for="exampleInputEmail1" class="form-label">Enter your name</label>
+                <input type="text" class="form-control w-25" id="namevalue">
+              </div>
+        <div class="mb-3 p-2">
+          <label for="exampleInputEmail1" class="form-label">Enter your email addres</label>
+          <input type="text" class="form-control w-25" id="textvalue">
+        </div>
+        <div class="p-2">
+        <button type="submit" class="btn btn-primary p-2" onclick="myfunction()">Submit</button>
+        </div>
+    </div>
+    <script>
+    function myfunction() {
+        var emailvalue = document.getElementById("textvalue").value;
+        var name = document.getElementById("namevalue").value;
+        Email.send({
+          Host : "smtp.elasticemail.com",
+          Username : "masterdna.cpt@gmail.com",
+          Password : "4E34121126AE059A1F665EF4A3C316F16C99",
+          To : emailvalue ,
+          From : "masterdna.cpt@gmail.com",
+          Subject : "Welcome to Techscription",
+          Body : "Hi\n" +name+ "\nThanks for Signing into Techscription",
+      }).then(
+        message => alert("Email sent successfully")
+      );
+          }
+     </script>
+</body>
+</html>
